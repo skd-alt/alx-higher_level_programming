@@ -1,6 +1,6 @@
-#!/usr/bin/bash
-"""Define a class Square."""
+#!/usr/bin/python3
+"""A class Square."""i
 
 class Square:
-    """Represent a square."""
+    """Simple square class."""
     pass
