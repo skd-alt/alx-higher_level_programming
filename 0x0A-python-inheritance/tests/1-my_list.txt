@@ -1,0 +1,55 @@
+# 1-my_list.txt
+
+===============================
+ How to Use 1-my_list.py
+===============================
+
+This library is very simple, since it only has one function called
+``add_integer(a, b=98)``.
+
+Numbers
+=======
+
+``print_sorted()`` returns the sorted list.
+
+::
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> mylist = MyList()
+    >>> mylist.append(1)
+    >>> mylist.append(3)
+    >>> mylist.append(2)
+    >>> print(mylist)
+    [1, 3, 2]
+    >>> mylist.print_sorted()
+    [1, 2, 3]
+    >>> print(mylist)
+    [1, 3, 2]
+
+::
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> mylist = MyList()
+    >>> mylist.append(1)
+    >>> mylist.append(2)
+    >>> mylist.append(3)
+    >>> print(mylist)
+    [1, 2, 3]
+    >>> mylist.print_sorted()
+    [1, 2, 3]
+    >>> print(mylist)
+    [1, 2, 3]
+
+::
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> mylist = MyList()
+    >>> mylist.append(1)
+    >>> mylist.append(3)
+    >>> mylist.append(1)
+    >>> print(mylist)
+    [1, 3, 1]
+    >>> mylist.print_sorted()
+    [1, 1, 3]
+    >>> print(mylist)
+    [1, 3, 1]
