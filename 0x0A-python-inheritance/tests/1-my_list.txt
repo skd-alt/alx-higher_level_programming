@@ -64,3 +64,16 @@ Numbers
     []
     >>> print(mylist)
     []
+
+::
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> mylist = MyList()
+    >>> mylist.append(1)
+    >>> mylist.append("a")
+    >>> mylist.append(2)
+    >>> print(mylist)
+    [1, 'a', 2]
+    >>> mylist.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'str' and 'int'
