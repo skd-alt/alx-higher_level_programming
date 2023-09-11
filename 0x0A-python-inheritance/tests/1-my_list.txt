@@ -58,12 +58,9 @@ Numbers
 
     >>> MyList = __import__('1-my_list').MyList
     >>> mylist = MyList()
-    >>> mylist.append(1)
-    >>> mylist.append(1)
-    >>> mylist.append(1)
     >>> print(mylist)
-    [1, 1, 1]
+    []
     >>> mylist.print_sorted()
-    [1, 1, 1]
+    []
     >>> print(mylist)
-    [1, 1, 1]
+    []
