@@ -11,17 +11,14 @@ def pascal_triangle(n):
 
     d = []
     for i in range(n):
-        if i == 0:
-            d.append([1])
-        else:
-            temp = []
-            for j in range(i + 1):
+        temp = []
+        for j in range(i + 1):
 
-                if j == 0:
-                    temp.append(1)
-                elif j < i:
+            if j == 0:
+                temp.append(1)
+            elif j < i:
                     temp.append(d[i - 1][j - 1] + d[i - 1][j])
-                else:
-                    temp.append(d[i - 1][j - 1])
-            d.append(temp)
+            else:
+                temp.append(d[i - 1][j - 1])
+        d.append(temp)
     return(d)
