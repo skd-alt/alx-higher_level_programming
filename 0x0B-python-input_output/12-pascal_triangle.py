@@ -6,9 +6,11 @@ def pascal_triangle(n):
     """Represent Pascal's Triangle of size n.
     Returns a list of lists of integers representing the triangle.
     """
+    if n <= 0:
+        return []
+
     d = []
-    x = 5
-    for i in range(x):
+    for i in range(n):
         if i == 0:
             d.append([1])
         else:
