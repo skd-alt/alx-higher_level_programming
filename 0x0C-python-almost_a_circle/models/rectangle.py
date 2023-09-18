@@ -91,6 +91,16 @@ class Rectangle(Base):
             for k, v in kwargs.items():
                 setattr(self, k, v)
 
+    def to_dictionary(self):
+        """Returns the dictionary of values"""
+        return {
+                'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
+                'width': getattr(self, "width")
+                }
+
     def __str__(self):
         """Return Rectangle attri"""
         txt = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} "
