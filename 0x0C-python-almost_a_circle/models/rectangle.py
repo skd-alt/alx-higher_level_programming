@@ -77,7 +77,8 @@ class Rectangle(Base):
 
     def display(self):
         """ Print the Rectangle #"""
-        image = ("#" * self.__width + "\n") * self.__height
+        image = "\n" * self.__y
+        image += (" " * self.__x + "#" * self.__width + "\n") * self.__height
         print(image[:-1])
 
     def __str__(self):
