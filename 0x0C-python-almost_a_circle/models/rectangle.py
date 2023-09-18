@@ -81,6 +81,13 @@ class Rectangle(Base):
         image += (" " * self.__x + "#" * self.__width + "\n") * self.__height
         print(image[:-1])
 
+    def update(self, *args):
+        """Update attributes"""
+        if args is not None and len(args) is not 0:
+            list_attrs = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, list_attrs[i], args[i])
+
     def __str__(self):
         """Return Rectangle attri"""
         txt = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} "
