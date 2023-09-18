@@ -79,3 +79,9 @@ class Rectangle(Base):
         """ Print the Rectangle #"""
         image = ("#" * self.__width + "\n") * self.__height
         print(image[:-1])
+
+    def __str__(self):
+        """Return Rectangle attri"""
+        txt = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} "
+        txt += f"- {self.__width}/{self.__height}"
+        return txt
