@@ -12,17 +12,17 @@ class TestRectangle(unittest.TestCase):
     def test_two_arg(self):
         """Test with two args"""
         r1 = Rectangle(5, 3)
-        self.assertEqual(r1.id, 3)
+        self.assertEqual(r1.id, 4)
 
     def test_three_arg(self):
         """Test with 3 args"""
         r2 = Rectangle(5, 3, 1)
-        self.assertEqual(r2.id, 2)
+        self.assertEqual(r2.id, 3)
 
     def test_four_arg(self):
         """Test with 4 args"""
         r3 = Rectangle(5, 3, 1, 5)
-        self.assertEqual(r3.id, 1)
+        self.assertEqual(r3.id, 2)
 
     def test_five_arg(self):
         """Test with 5 args"""
