@@ -1,0 +1,1 @@
+More queiries SQL Tutorial
