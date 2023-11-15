@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 let words = '';
-let args = process.argv
+const args = process.argv;
 
 words = words.concat(fs.readFileSync(args[2]));
 words = words.concat(fs.readFileSync(args[3]));
