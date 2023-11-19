@@ -13,17 +13,8 @@ if __name__ == '__main__':
             format(argv[1], argv[2], argv[3]),
             pool_pre_ping=True
             )
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    stmt = select(State.id).where(State.name == "{}".format(argv[4],))
-    
-    with engine.connect() as connection:
-        state = connection.execute(stmt)
-        i = 0
-        for row in state:
-           i += 1
-           print("{}".format(row.id))
-        if i > 0:
-            pass
-        else:
-            print("Not Found")
-
+    state = session.query(State).filter(State.name == argv[4]).first()
+    print("Not found" if not state else state.id)
