@@ -14,8 +14,7 @@ if __name__ == '__main__':
 
     cur = conn.cursor()
     sql_cmd = (
-            "SELECT * FROM states WHERE name LIKE '" + argv[4]
-            + "' ORDER BY id ASC;"
+            "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC;".format(argv[4])
             )
     cur.execute(sql_cmd)
     states = cur.fetchall()
