@@ -13,9 +13,11 @@ if __name__ == '__main__':
             )
 
     cur = conn.cursor()
-    sql_cmd = (
-            "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC;".format(argv[4])
-            )
+    sql_cmd = ("SELECT * \
+            FROM states \
+            WHERE CONVERT(`name` USING Latin1) \
+            COLLATE Latin1_General_CS = '{}';".format(sys.argv[4]))
+
     cur.execute(sql_cmd)
     states = cur.fetchall()
     for state in states:
