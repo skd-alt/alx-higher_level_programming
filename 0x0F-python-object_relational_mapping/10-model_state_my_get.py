@@ -3,7 +3,7 @@
 
 from sys import argv
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, bindparam, select
 from sqlalchemy.orm import sessionmaker
 
 
@@ -14,11 +14,16 @@ if __name__ == '__main__':
             pool_pre_ping=True
             )
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    stmt = select(State.id).where(State.name == bindparam("my_param"))
+    
+    with engine.connect() as connection:
+        state = connection.execute(stmt, [{"my_param": argv[4]}])
+        i = 0
+        for row in state:
+           i += 1
+           print("{}".format(row.id))
+        if i > 0:
+            pass
+        else:
+            print("Not Found")
 
-    state = session.query(State).filter(
-            State.name == "{}".format(argv[4],)
-            ).first()
-
-    print("Not Found" if not state else "{}".format(state.id))
