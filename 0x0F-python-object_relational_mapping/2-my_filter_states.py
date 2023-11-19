@@ -16,7 +16,7 @@ if __name__ == '__main__':
     sql_cmd = ("SELECT * \
             FROM states \
             WHERE CONVERT(`name` USING Latin1) \
-            COLLATE Latin1_General_CS = '{}';".format(sys.argv[4]))
+            COLLATE Latin1_General_CS = '{}';".format(argv[4]))
 
     cur.execute(sql_cmd)
     states = cur.fetchall()
