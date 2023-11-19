@@ -13,12 +13,8 @@ if __name__ == '__main__':
             )
 
     cur = conn.cursor()
-    cur.execute("SELECT * \
-            FROM states \
-            WHERE CONVERT(`name` USING Latin1) \
-            COLLATE Latin1_General_CS \
-            LIKE 'N%';")
-
+    cur.execute("SELECT * FROM states WHERE name = %s;", (argv[4],))
     states = cur.fetchall()
+
     for state in states:
         print(state)
