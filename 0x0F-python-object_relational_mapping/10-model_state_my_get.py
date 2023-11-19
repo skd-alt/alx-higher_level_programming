@@ -14,10 +14,10 @@ if __name__ == '__main__':
             pool_pre_ping=True
             )
 
-    stmt = select(State.id).where(State.name == bindparam("my_param"))
+    stmt = select(State.id).where(State.name == "{}".format(argv[4],))
     
     with engine.connect() as connection:
-        state = connection.execute(stmt, [{"my_param": argv[4]}])
+        state = connection.execute(stmt)
         i = 0
         for row in state:
            i += 1
